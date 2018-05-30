@@ -8,11 +8,31 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <h3>Ionic Menu Starter!!!</h3>
 
   <p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
   </p>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+
+  <ion-list>
+
+      <button ion-button secondary menuToggle style="display: block;">Toggle Menu</button>
+
+      <button ion-button (click)="presentModalPage()" style="display: block;">Modal Page Open</button>
+
+  </ion-list>
+
+  <h4>입력된 결과 값</h4>
+  <ion-grid *ngIf="profile != null">
+    <ion-row>
+      <ion-col>{{profile.actionSwitch}}</ion-col>
+      <ion-col col-6>{{profile.name}}</ion-col>
+      <ion-col>{{profile.gender}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>{{profile.domestic}}</ion-col>
+      <ion-col>{{profile.startDate}}</ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
