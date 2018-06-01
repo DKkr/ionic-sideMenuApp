@@ -23,13 +23,18 @@ export class ProductListPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProductListPage');
-
-    this.productsObservable = this.restProvider.getProducts();
-    this.productsObservable.subscribe()
   }
+
+  ionViewWillEnter(){
+    this.productsObservable = this.restProvider.getProducts();
+  }
+
 
   navToDetail(product){
     this.navCtrl.push('ProductDetailPage', {product:product});
   }
 
+  createProduct(){
+    this.navCtrl.push('ProductDetailPage', {});
+  }
 }

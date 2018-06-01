@@ -30,6 +30,7 @@
     <!--</ion-row>-->
   <!--</ion-grid>-->
 
+
   <ion-item>
     <ion-label>Id: {{product.id}}</ion-label>
   </ion-item>
@@ -46,4 +47,12 @@
     <ion-input type="number" [(ngModel)]="product.quantity"></ion-input>
   </ion-item>
 
+  <button ion-button icon-right (click)="saveProduct(product)">
+    저장
+    <ion-icon name="md-checkmark" item-end></ion-icon>
+  </button>
+  <button *ngIf="product.id" ion-button icon-right color="danger" (click)="deleteProduct(product.id)">
+    삭제
+    <ion-icon name="trash" item-end></ion-icon>
+  </button>
 </ion-content>

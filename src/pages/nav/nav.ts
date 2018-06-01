@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Account} from "../../interfaces/account";
+import {EmailComposer} from "@ionic-native/email-composer";
 
 /**
  * Generated class for the NavPage page.
@@ -17,7 +18,8 @@ import {Account} from "../../interfaces/account";
 export class NavPage {
   private account = {} as Account;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              private emailComposer: EmailComposer) {
   }
 
   ionViewDidLoad() {
@@ -25,4 +27,14 @@ export class NavPage {
     this.account = this.navParams.get("account");
   }
 
+  sendEmail(account: Account){
+    let emailInfo = {
+      to: account.email,
+      subject: "Hello " + account.name,
+      body: "",
+      isHtml:true
+    }
+
+    this.emailComposer.open(emailInfo);
+  }
 }

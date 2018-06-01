@@ -23,6 +23,36 @@
       "name": "house",
       "cost": 20000,
       "quantity": 5
+    },
+    {
+      "name": "pencil",
+      "cost": "111",
+      "quantity": "11",
+      "id": 5
+    },
+    {
+      "name": "bag",
+      "cost": "2",
+      "quantity": "2",
+      "id": 6
+    },
+    {
+      "name": "탱크",
+      "cost": "2000",
+      "quantity": "2",
+      "id": 7
+    },
+    {
+      "name": "fff",
+      "cost": "3",
+      "quantity": "3",
+      "id": 8
+    },
+    {
+      "name": "2",
+      "cost": "2",
+      "quantity": "2",
+      "id": 9
     }
   ]
 }

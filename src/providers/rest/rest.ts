@@ -30,4 +30,21 @@ export class RestProvider {
         return Observable.empty<Product[]>();
       });
   }
+
+  public createProduct(product: Product):Observable<Product>{
+    return this.http.post(this.baseUrl + "products", product)
+      .map(response => new Product(response))
+      .catch(() => Observable.empty<Product>());
+  }
+
+  public updateProduct(product: Product):Observable<Product>{
+    return this.http.put(this.baseUrl + "products/" + product.id, product)
+      .map(response => new Product(response))
+      .catch(() => Observable.empty<Product>());
+  }
+
+  public deleteProduct(productID: number):Observable<Object>{
+    return this.http.delete(this.baseUrl + "products/" + productID)
+      .catch(() => Observable.empty<Object>());
+  }
 }
